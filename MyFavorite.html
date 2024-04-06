@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="fav icon.png"/>
+    <title>My Movie</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><b>MyMovies</b></a>
+            <button class="navbar-toggler" type="button Movie"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a href="toprated.html" class="nav-item nav-link active" class="d-inline-block align-top" alt=""> Top Rated</a>
+                    <a href="nowplaying.html" class="nav-item nav-link active" class="d-inline-block align-top" alt="">Now Playing</a>
+                    <a href="upcoming.html" class="nav-item nav-link active" class="d-inline-block align-top" alt=""> Upcoming</a>
+                    <a class="nav-link js-scroll-trigger" href="MyFavorite.html"><i class="fas fa-heart"></i> My Favorite</a>
+                </div>
+            </div>
+        </div>
+        <form  id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+    </nav>
+    
+    <div id="tags"></div>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+        
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
+        
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
+
+      </div>
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+
+    </div>
+
+    <div class="row" id="movie-list">
+        <table class="table table-hover bg-light p-3" style="opacity: 75%;">
+            <tbody id="bodyFavorite"></tbody>
+        </table>
+
+        
+    <script>
+
+            if (localStorage.getItem('fav')===null)
+                {
+                    alert("Belum ada yang dipilih")
+                }
+                else
+                {
+                    let myItem = JSON.parse(localStorage.getItem('fav'));
+
+                    console.log(myItem)
+                    for (let i=0; i < myItem.length; i++) {
+                        const movieEl = document.createElement('div');
+                            movieEl.classList.add('movie');
+                            movieEl.innerHTML = `
+                            <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
+                            <div class="movie-info">
+                                <h3>${title}</h3>
+                                <span class="${getColor(vote_average)}">${vote_average}</span>
+                            </div>
+                            <div class="overview">
+                                <h3>Overview</h3>
+                                ${overview}
+                                <br/> 
+                                <button class="know-more" id="${id}">Know More</button>
+                            </div>
+                        
+                            `
+                            $('#bodyFavorite').append(tr.html(tag));
+                        }
+                }
+    </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        
+</body>
+</html>

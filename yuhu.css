@@ -1,0 +1,9 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .grid-container {
+    display: grid;
+    grid-auto-columns: 100px;
+  }
+     
