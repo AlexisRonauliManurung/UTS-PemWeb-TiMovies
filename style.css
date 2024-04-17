@@ -5,8 +5,8 @@
 }
 
 :root{
-    --primary-color: #ECF5F5;
-    --secondary-color: #3A4F6F;
+    --primary-color: #ffffff;
+    --secondary-color: #d87aa1;
 }
 
 body{
@@ -20,7 +20,7 @@ nav{
     align-items: center;
     widht: 100%;
     border: 1px solid rgba(0, 0,0, 0.04);
-    background-color: #032541;
+    background-color: #7c1741;
 }
 
 
@@ -114,7 +114,7 @@ main{
 }
 
 .movie-info span{
-    background-color: #032541;
+    background-color: #6f0032;
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-weight: bold;
@@ -161,7 +161,7 @@ main{
 .tag{
     color:white;
     padding:10px 20px;
-    background-color: #4C78BE;
+    background-color: #ea2275;
     border-radius: 50px;
     margin:5px;
     display:inline-block;
@@ -169,10 +169,10 @@ main{
 }
 
 .tag.highlight{
-    background-color: #032541;
+    background-color: #6f0032;
 }
 .no-results{
-    color: #032541;
+    color: #6f0032;
 }
 
 .pagination{
@@ -289,7 +289,7 @@ main{
   }
 
   
-  .arrow.right-arrow{
+.arrow.right-arrow{
     top:50%;
     transform: translateY(-50%);
     right:5%;
@@ -311,4 +311,24 @@ main{
 
 .dots .dot.active{
     border-color: orange;
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#copyright {
+    text-align: center;
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    margin-top: 50px;
 }
